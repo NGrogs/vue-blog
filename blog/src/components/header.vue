@@ -2,13 +2,16 @@
     <nav class="cyan lighten-1">
         <div id="header-nav" class="container">
             <ul class="row">
-            <div class="col s4">
+            <div id="header-name" class="col s3">
+                <li class="left">Denise Quirke Blog</li>
+            </div>
+            <div class="col s3">
                 <li class="right"><router-link to="/" exact >Blog</router-link></li>
             </div>
-            <div class="col s4">
+            <div class="col s3">
                 <li class="right"><router-link to="/add" exact>Add</router-link></li>
             </div>
-            <div class="col s4">
+            <div class="col s3">
                 <li class="right"><router-link to="/about" exact>About</router-link></li>
             </div>
             </ul>
@@ -59,11 +62,19 @@ nav {
     padding: 14px 0;
     padding-bottom: 5em  ;
     margin-bottom: 4em;
-    text-align: center;
 }
 
 .router-link-active{
     color: #444;
+}
+
+#header-name {
+    color: #fff;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.3em;
+    font-weight: bold;
+    
 }
 
 </style>

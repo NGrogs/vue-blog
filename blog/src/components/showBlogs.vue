@@ -4,12 +4,14 @@
 
         <input type="text" v-model="search" placeholder="search blogs"/>
 
-        <div v-for="blog in filteredBlogs" class="single-blog">
-            <h2>{{blog.title}}</h2>
-            <article>{{blog.content}}</article>
-            <router-link  v-bind:to="'blog/' + blog.id">
-                <button class="btn-large cyan lighten-1"> See Post </button>
-            </router-link>
+        <div class="blog-container">
+            <div v-for="blog in filteredBlogs" class="single-blog">
+                <h2>{{blog.title}}</h2>
+                <article>{{blog.content}}</article>
+                <router-link  v-bind:to="'blog/' + blog.id">
+                    <button class="btn-large cyan lighten-1"> See Post </button>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -54,16 +56,27 @@ export default {
 
 <style scoped>
 #show-blogs {
-    max-width: 50%;
+    max-width: 90%;
     margin: 0 auto;
     margin-bottom: 10em;
+    box-sizing: border-box;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    
 }
 
 .single-blog {
     padding: 20px;
     margin: 20px;
-    box-sizing: border-box;
     background: #eee;
+    flex-grow: 1;   
+    flex-basis: 25em;
+    border: .1em solid black;
+    max-width: 25em;
 }
 
 button {
